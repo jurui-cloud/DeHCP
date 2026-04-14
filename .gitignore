@@ -1,16 +1,34 @@
-# Byte-compiled / optimized / DLL files
+# ==========================================
+# 1. Python 通用编译与缓存文件 (通用规则放前面)
+# ==========================================
 __pycache__/
 *.py[cod]
 *$py.class
-
-.DS_Store
-
-# C extensions
 *.so
+*.pyc
 
-# Distribution / packaging
-.Python
-build/
+# ==========================================
+# 2. 虚拟环境 (Virtual Environments)
+# ==========================================
+.venv/
+venv/
+env/
+ENV/
+.python-version
+
+# ==========================================
+# 3. 日志与数据文件 (重点：忽略 .log 和特定文件)
+# ==========================================
+*.log
+logs/
+
+# 忽略特定的本地文档
+算法设计.md
+idea.md
+
+# ==========================================
+# 4. 项目构建与打包产物 (Distribution)
+# ==========================================
 develop-eggs/
 dist/
 downloads/
@@ -29,9 +47,13 @@ share/python-wheels/
 *.egg
 MANIFEST
 
+# ==========================================
+# 5. 开发工具与 IDE 配置
+# ==========================================
+# Byte-compiled
+*$py.class
+
 # PyInstaller
-#  Usually these files are written by a python script from a template
-#  before PyInstaller builds the exe, so as to inject date/other infos into it.
 *.manifest
 *.spec
 
@@ -39,7 +61,7 @@ MANIFEST
 pip-log.txt
 pip-delete-this-directory.txt
 
-# Unit test / coverage reports
+# Testing
 htmlcov/
 .tox/
 .nox/
@@ -57,125 +79,65 @@ coverage.xml
 *.mo
 *.pot
 
-# Django stuff:
+# Django/Flask/Scrapy/Sphinx/etc (保留通用模板)
 *.log
 local_settings.py
 db.sqlite3
 db.sqlite3-journal
-
-# Flask stuff:
 instance/
 .webassets-cache
-
-# Scrapy stuff:
 .scrapy
-
-# Sphinx documentation
 docs/_build/
-
-# PyBuilder
 target/
 
-# Jupyter Notebook
+# Jupyter & IPython
 .ipynb_checkpoints
-
-# IPython
 profile_default/
 ipython_config.py
 
-# pyenv
-.python-version
-
-# pipenv
-#   According to pypa/pipenv#598, it is recommended to include Pipfile.lock in version control.
-#   However, in case of collaboration, if having platform-specific dependencies or dependencies
-#   having no cross-platform support, pipenv may install dependencies that don't work, or not
-#   install all needed dependencies.
+# Pipenv & PEP 582
 #Pipfile.lock
-
-# PEP 582; used by e.g. github.com/David-OConnor/pyflow
 __pypackages__/
 
-# Celery stuff
+# Celery
 celerybeat-schedule
 celerybeat.pid
 
-# SageMath parsed files
+# SageMath
 *.sage.py
 
-# Environments
-.env
-.venv
-env/
-venv/
-ENV/
+# Environments (备份文件)
 env.bak/
 venv.bak/
 
-# Spyder project settings
-.spyderproject
-.spyproject
+# IDEs
+.DS_Store
+.idea/
+.vscode/
 
-# Rope project settings
-.ropeproject
-
-# mkdocs documentation
-/site
-
-# mypy
+# Type Checkers
 .mypy_cache/
 .dmypy.json
 dmypy.json
-
-# Pyre type checker
 .pyre/
-logs/
-*.c
-*.so
-.idea
 
-opv2v_data_dumping
-logs/
-dataset_link
+# Misc
+/site
+.spyderproject
+.spyproject
+
+# ==========================================
+# 6. 项目特定的大文件夹 (你不想上传的目录)
+# ==========================================
+# --- 核心：这里是你不想上传的文件夹 ---
+dataset/
 data_vis/
-icp/vis_result
-icp/npy_result
-opencood/visualization/draw_fancy/result*
-opencood/visualization/draw_fancy/dataset*
-opencood/visualization/draw_box_align/vis_result
-opencood/visualization/draw_box_align/result_*
-keypoints_file
+npy_result/
 vis_result/
 image_compare/
-box_align_items
 stage1_boxes/
 bash_script/
-dataset
-opencood/logs
-opencood/logs_HEAL
-opencood/logs_baseline
-opencood/models/heter_SECOND_lift_splat_2stage_dense_redet.py
-opencood/models/heter_SECOND_lift_splat_2stage_redet.py
-opencood/loss/heterception_redet_loss.py
-opencood/hypes_yaml/opv2v/heter
-opencood/tools/draw_heatmap.py
-opencood/tools/save_params.py
-./vscode
-.vscode
-opencood/tools/inference_w_noise_heter.py
 
-# 忽略 dataset 文件夹
-dataset/
-
-# 忽略所有 .log 结尾的文件
-*.log
-
-# 忽略特定的 markdown 文件
-算法设计.md
-idea.md
-
-# (建议) 忽略 Python 的缓存文件和虚拟环境
-__pycache__/
-*.pyc
-.venv/
-env/
+# (可选) 如果你有巨大的日志文件夹，也在这里加
+# output/
+# results/
