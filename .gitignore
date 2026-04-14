@@ -163,3 +163,19 @@ opencood/tools/save_params.py
 ./vscode
 .vscode
 opencood/tools/inference_w_noise_heter.py
+
+# 忽略 dataset 文件夹
+dataset/
+
+# 忽略所有 .log 结尾的文件
+*.log
+
+# 忽略特定的 markdown 文件
+算法设计.md
+idea.md
+
+# (建议) 忽略 Python 的缓存文件和虚拟环境
+__pycache__/
+*.pyc
+.venv/
+env/
